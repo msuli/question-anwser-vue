@@ -7,6 +7,10 @@
         <hr>
         <input type="text" v-model="value">
         <p>{{ value }}</p>
+        <button
+                class="uk-button uk-button-default"
+                @click="navigateToHome"
+        >go to home</button>
     </div>
 </template>
 <script>
@@ -24,6 +28,11 @@
                 set(value){
                     this.$store.dispatch(types.UPDATE_VALUE, value);
                 }
+            }
+        },
+        methods: {
+            navigateToHome(){
+                this.$router.push('/')
             }
         },
         components: {

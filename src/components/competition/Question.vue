@@ -108,3 +108,8 @@
         }
     }
 </script>
+<style>
+    .uk-width-medium-1-2{
+        margin:0 auto;
+    }
+</style>
