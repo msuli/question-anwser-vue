@@ -10,10 +10,10 @@
     </div>
 </template>
 <script>
-    import Add from './quote/add.vue';
-    import QuoteBar from './quote/quoteBar.vue';
-    import QuoteGrid from './quote/quoteGrid.vue';
-    import * as types from '../store/types';
+    import Add from './add.vue';
+    import QuoteBar from './quoteBar.vue';
+    import QuoteGrid from './quoteGrid.vue';
+    import * as types from '../../store/types';
 
     export default {
         computed: {

@@ -14,8 +14,8 @@
     </div>
 </template>
 <script>
-    import Question from './components/Question.vue';
-    import Answer from './components/Answer.vue';
+    import Question from './Question.vue';
+    import Answer from './Answer.vue';
     export default{
         data(){
             return {
@@ -24,13 +24,17 @@
         },
         methods: {
             answered(event){
-                if(event){
+                if (event) {
                     this.mode = 'app-answer'
-                }else{
+                } else {
                     alert('wrong, try again!');
                     this.mode = 'app-question'
                 }
             }
+        },
+        components: {
+            appQuestion: Question,
+            appAnswer: Answer
         }
     }
 </script>

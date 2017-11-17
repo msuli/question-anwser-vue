@@ -1,24 +1,15 @@
 <template>
     <div class="uk-container uk-container-center">
-        <routerview></routerview>
-        <!--<app-user></app-user>-->
-        <app-add-quote></app-add-quote>
+        <app-header></app-header>
+        <router-view></router-view>
     </div>
 </template>
-
 <script>
-
-    import User from './components/user.vue';
-    import AddQuote from './components/AddQuote.vue';
-
+    import Header from './components/header/Header.vue';
     export default {
-        name: 'app',
-        data () {
-            return {
-                mode: 'app-question'
-            }
-        },
-
+        components: {
+            appHeader: Header
+        }
     }
 </script>
 
