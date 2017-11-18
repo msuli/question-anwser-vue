@@ -10,6 +10,9 @@
             <router-link tag="li" to="/user" active-class="uk-active">
                 <a>user</a>
             </router-link>
+            <router-link tag="li" to="/anotherUser" active-class="uk-active">
+                <a>another user</a>
+            </router-link>
         </ul>
     </div>
 </template>

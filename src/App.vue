@@ -1,7 +1,11 @@
 <template>
     <div class="uk-container uk-container-center">
-        <app-header></app-header>
-        <router-view></router-view>
+        <!--<app-header></app-header>-->
+        <router-view name="header-top"></router-view>
+        <transition name="slide" mode="out-in">
+            <router-view></router-view>
+        </transition>
+        <router-view name="header-bottom"></router-view>
     </div>
 </template>
 <script>
@@ -14,41 +18,42 @@
 </script>
 
 <style scoped>
-    .uk-panel {
-        margin: 0 auto;
+    .slide-leave-active {
+        opacity: 0;
+        transition: opacity 1s ease;
+        animation: slide-out 1s ease forwards;
     }
 
-    .flip-enter {
-
+    .slide-leave {
+        opacity: 1;
     }
 
-    .flip-enter-active {
-        animation: flip-in .5s ease-out forwards;
+    .slide-enter {
+        opacity: 0;
     }
 
-    .flip-leave {
-
+    .slide-enter-active {
+        opacity:1;
+        transition: opacity 1s ease;
+        animation: slide-in 1s ease forwards;
     }
 
-    .flip-leave-active {
-        animation: flip-out .5s ease-out forwards;
-    }
-
-    @keyframes flip-out {
-        from {
-            transform: rotateY(0deg);
+    @keyframes slide-in {
+        0% {
+            transform: translateY(-30px);
         }
-        to {
-            transform: rotateY(90deg);
-        }
-    }
-
-    @keyframes flip-in {
-        from {
-            transform: rotateY(90deg);
-        }
-        to {
-            transform: rotateY(0deg);
+        100% {
+            transform: translateY(0);
         }
     }
+
+    @keyframes slide-out {
+        0% {
+            transform: translateY(0);
+        }
+        100% {
+            transform: translateY(-30px);
+        }
+    }
+
 </style>
